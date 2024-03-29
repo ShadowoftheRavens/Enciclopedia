@@ -1,0 +1,408 @@
+/* Cardo for headers. */
+@import url("https://fonts.googleapis.com/css?family=Cardo");
+/* Open Sans for tables and box text. */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+/* Rochester for drop caps. */
+@import url("https://fonts.googleapis.com/css?family=Rochester");
+
+@import url("https://fonts.googleapis.com/css?family=Libre+Baskerville:700");
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic");
+
+.monster_stats {
+  text-align: center;
+  font-size: 13.5px;
+  line-height: 1.2em;
+}
+.monster_stats {
+  box-sizing: border-box;
+  max-width: 100%;
+  font-family: "Noto Sans", "Myriad Pro", Calibri, Helvetica, Arial, sans-serif;
+}
+.stat-block {
+  text-align: left;
+  margin: 20px;
+  display: inline-block;
+  vertical-align: top;
+  width: 17%;
+  min-width: 280px;
+  background: #fdf1dc;
+  padding: 5px 10px 20px;
+  box-shadow: 0 0 1.5em #867453;
+}
+.stat-block.wide {
+  width: 46.5%;
+  min-width: 560px;
+  text-align: center;
+}
+.stat-block.wide .section-left,
+.stat-block.wide .section-right {
+  display: inline-block;
+  vertical-align: top;
+  width: 48%;
+  text-align: left;
+}
+.stat-block.wide .section-left {
+  margin-right: 1.5%;
+}
+.stat-block.wide .section-right {
+  margin-left: 1.5%;
+}
+@media screen and (max-width: 675px) {
+  .stat-block.wide {
+    min-width: 280px;
+  }
+  .stat-block.wide .section-left,
+  .stat-block.wide .section-right {
+    display: block;
+    width: 100%;
+  }
+  .stat-block.wide .section-left {
+    margin: 0;
+  }
+  .stat-block.wide .section-right {
+    margin: 0;
+  }
+}
+.orange-border {
+  display: block;
+  background: #e69a28;
+  border: 1px solid #000;
+  height: 5px;
+  padding: 0 10px 0;
+  margin: -10px -10px 0;
+  box-sizing: initial;
+}
+.orange-border.bottom {
+  margin: 15px -10px -20px;
+}
+.tapered-rule {
+  display: block;
+  width: 100%;
+  height: 5px;
+  border: none;
+  color: #922610;
+  fill: #922610;
+  stroke: #922610;
+}
+.creature-heading h1 {
+  font-family: "Libre Baskerville", "Lora", "Calisto MT", "Bookman Old Style",
+    Bookman, "Goudy Old Style", Garamond, "Hoefler Text", "Bitstream Charter",
+    Georgia, serif;
+  color: #922610;
+  font-size: 23px;
+  line-height: 1.2em;
+  margin: 10px 0 0;
+  letter-spacing: 1px;
+  font-variant: small-caps;
+  font-weight: bold;
+}
+.creature-heading h2 {
+  font-weight: normal;
+  font-style: italic;
+  font-size: 12px;
+  line-height: 1.2em;
+  margin: 0 0 10px;
+}
+.property-line h4,
+.property-line p {
+  display: inline;
+  margin: 0;
+  color: #922610;
+  font-size: 13.5px;
+  line-height: 1.2em;
+}
+.property-line h4 {
+  color: #7a200d;
+}
+.property-line {
+  text-indent: -1em;
+  padding-left: 1.1em;
+  line-height: 1.4em;
+}
+.property-line.first {
+  margin: 8px 0 0;
+}
+.property-line.last {
+  margin: 0 0 10px;
+}
+.abilities {
+  text-align: center;
+  color: #922610;
+}
+.abilities > div {
+  display: inline-block;
+  vertical-align: middle;
+  width: 15.5%;
+  min-width: 40px;
+  font-size: 12px;
+  line-height: 1em;
+}
+.abilities h4 {
+  margin: 10px 0 2px;
+  font-size: 14px;
+  line-height: 1.2em;
+  text-transform: uppercase;
+  color: #7a200d;
+}
+.abilities p {
+  margin: 0 0 10px;
+  line-height: 1.2em;
+}
+.property-block h4,
+.property-block p {
+  font-size: 13.5px;
+  line-height: 1.2em;
+  display: inline;
+  margin: 0;
+}
+.property-block h4 {
+  font-style: italic;
+}
+.property-block {
+  padding: 10px 2px 0;
+}
+.actions h3 {
+  border-bottom: 1px solid #7a200d;
+  color: #7a200d;
+  font-size: 21px;
+  font-variant: small-caps;
+  font-weight: normal;
+  letter-spacing: 1px;
+  margin: 20px 0 0;
+  padding: 0 0 10px;
+  text-indent: 5px;
+}
+.actions {
+  margin: 0 0 20px;
+}
+.actions:last-child {
+  margin: 0;
+}
+
+@media print {
+  .page-break {
+    page-break-after: always;
+  }
+  body {
+    background-color: #e7ddc6;
+  }
+  @page {
+    size: auto; /* auto is the initial value */
+
+    /* this affects the margin in the printer settings */
+    margin: 2cm;
+  }
+}
+@media screen and (max-width: 575px) {
+  .stat-block {
+    margin: 20px 0;
+  }
+}
+
+/* Setup for showing something like an A4 size roll when viewed on screen. */
+@media screen {
+  html,
+  body {
+    background: #e7ddc6;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    width: 170mm;
+    padding: 10mm;
+    margin: auto;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    background: #fff;
+
+    background: url("bg.png");
+  }
+}
+/* Setup for when we actually print it. */
+
+body {
+  font-size: 12pt;
+  line-height: 1.4em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2em;
+  color: #58180d;
+  font-variant-caps: small-caps;
+  font-family: "Cardo", serif;
+  margin-bottom: 0.1em;
+  page-break-after: avoid;
+}
+h1 {
+  margin-bottom: 0.3em;
+}
+h3 {
+  border-bottom: 2px solid #c9ad6a;
+}
+
+/* Indent any paragraph after first */
+p + p {
+  text-indent: 1em;
+}
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+  /*text-align: justify;*/
+}
+
+/*
+  Tables with even-odd alternate coloured rows.
+  First column is centered, rest is left aligned.
+*/
+table {
+  border-collapse: collapse;
+  margin: auto;
+  width: 100%;
+  font-family: "Open Sans", sans-serif;
+}
+table tr,
+table th,
+table td {
+  border: 0;
+  padding: 0.2ex;
+  text-align: left;
+  font-size: 11pt;
+}
+table th {
+  vertical-align: bottom;
+}
+table td {
+  vertical-align: top;
+}
+tr:nth-child(even) {
+  background: #f0dbb5;
+}
+th:nth-child(1),
+td:nth-child(1) {
+  text-align: center;
+}
+
+blockquote {
+  margin: 1em 0;
+  width: 100%;
+  font-style: italic;
+}
+blockquote[cite]:after,
+blockquote cite:before {
+  content: "— " attr(cite);
+}
+blockquote[cite]:after,
+blockquote cite {
+  display: block;
+  text-align: right;
+  font-style: normal;
+}
+
+/* List with dots aligned to the rest of the text. */
+ul {
+  margin: 0.5em 0;
+  padding-left: 1.2em;
+}
+
+/* Drop Caps, ie. that fancy big first letter of chapters. */
+.dropcap:first-letter {
+  /*initial-letter: 2;*/
+  float: left;
+  font-size: 4em;
+  line-height: 1em;
+  padding-right: 0.2em;
+  font-family: "Rochester", cursive;
+}
+
+/* Alternative manual colour and aligning. */
+h3.blue-head {
+  text-align: right;
+  color: #668fad;
+  border-bottom: 2px solid #668fad;
+  line-height: 100%;
+}
+
+label.table-header {
+  font-size: 105%;
+  font-weight: bold;
+  margin-top: 0.5em;
+  display: inline-block;
+  font-family: "Open Sans", sans-serif;
+}
+
+.opening-flavour {
+  margin-top: 0.2em;
+  margin-bottom: 0.3em;
+  font-style: italic;
+}
+
+.readaloud,
+.sidenote {
+  padding: 1.5ex;
+  margin: 0.8em 0 0.8em 0;
+  font-family: "Open Sans", sans-serif;
+  line-height: 170%;
+  font-size: 11pt;
+}
+.readaloud {
+  background: #e4d0bf;
+  border: solid #9c2b1b;
+  border-width: 0 2px;
+}
+.sidenote {
+  background: #e8dfd6;
+  border: solid #000;
+  border-width: 2px 0;
+}
+
+.sidenote h1,
+.sidenote h2,
+.sidenote h3,
+.sidenote h4,
+.sidenote h5,
+.sidenote h6 {
+  margin-top: 0;
+  color: #000;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* */
+.two-columns {
+  column-count: 2;
+  column-gap: 1cm;
+}
+
+.Titleoftheos {
+  font-size: 3em;
+  display: flex;
+  justify-content: center;
+}
+.undertitle {
+  display: flex;
+  justify-content: center;
+  color: #000;
+  font-size: 1em;
+  margin-bottom: 3em;
+}
+/*
+  Some further inspiration can be found here:
+  https://github.com/evanbergeron/DND-5e-LaTeX-Template
+  https://github.com/Valloric/statblock5e
+
+  Some such includes:
+  F7F2E5 "bgtan" e.g. used for background and quotebox
+  58180D "titlered" e.g. used for titles
+  C9AD6A "undergold" e.g. used for titlerules
+  B89A67 "uppergold" e.g. used for pagenumbers and footer
+  E69A28 "puregold" e.g. used for top line in newer monsterbox
+  FDF1DC "monstertan" e.g. used for newer monsterblock
+  F0DBB5 "monstertandark" e.g. used for older monsterbox
+  E0E5C1 "commentgreen" e.g. used in table and green commentbox
+  E9CDC2 "itemtablepink" e.g. used in item tables instead of the green
+  9C2B1B "rulered" e.g. used for triangular rule in statsblock
+*/
