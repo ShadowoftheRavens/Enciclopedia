@@ -10,9 +10,32 @@
   </head>
 
   <body>
-    <label for="search"
-      >Search Here: <input type="text" id="search" onkeyup="showMonsters()"
-    /></label>
+    <h1>Bestiarsy D&D 5e</h1>
+    <div id="loading-bar">
+      <div class="wrapper">
+        <div class="loader-box">
+          <div class="loader"></div>
+          <div class="loader-text">Loading...</div>
+        </div>
+
+        <div class="description-box">
+          Please be Patient this may take a while
+        </div>
+      </div>
+    </div>
+    <script>
+      window.onload = function () {
+        if (!window.monstersData) {
+          document.getElementById("search").style.display = "none";
+          showMonsters();
+        }
+      };
+    </script>
+    <div id="searchbar">
+      <label for="search"
+        >Search Here: <input type="text" id="search" onkeyup="showMonsters()"
+      /></label>
+    </div>
 
     <script src="showMonsters.js">
       window.onload = showMonsters()
