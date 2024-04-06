@@ -3,6 +3,11 @@ async function showMonsters() {
 
   try {
     if (!window.monstersData) {
+      document.getElementById("searchbar").style.display = "none";
+      // Display loading bar
+      const loadingBar = document.getElementById("loading-bar");
+      loadingBar.style.display = "block";
+
       const response = await fetch(url);
       const data = await response.json();
       const totalPages = Math.ceil(data.count / data.results.length);
@@ -20,6 +25,13 @@ async function showMonsters() {
       monsterList = jsonData.flatMap((data) => data.results);
       console.log(monsterList.length, "=>", monsterList);
       window.monstersData = monsterList;
+
+      // Hide loading bar
+      loadingBar.style.display = "none";
+
+      document.getElementById("searchbar").style.display = "inline";
+      document.getElementById("search").style.display = "inline";
+      
     }
   } catch (error) {
     alert("Error fetching monster data:", error);
