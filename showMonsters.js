@@ -14,7 +14,18 @@ async function showMonsters() {
 
       const fetchPromises = [];
       for (let index = 1; index <= totalPages; index++) {
-        fetchPromises.push(fetch(`${url}?page=${index}`));
+        try {
+          const response = await fetch(`${url}?page=${index}`);
+          if (response.status === 200) {
+            fetchPromises.push(response);
+          }
+        } catch (error) {
+          loadingBar.style.display = "none";
+          const errorMessage = `An error occurred: ${error.message} Please refresh the page or try again.`;
+          document.getElementById("error").innerHTML = errorMessage;
+          setTimeout(5000);
+          location.reload();
+        }
       }
 
       const responses = await Promise.all(fetchPromises);
@@ -31,17 +42,25 @@ async function showMonsters() {
 
       document.getElementById("searchbar").style.display = "inline";
       document.getElementById("search").style.display = "inline";
-      
     }
   } catch (error) {
-    alert("Error fetching monster data:", error);
+    loadingBar.style.display = "none";
+    const errorMessage = `An error occurred: ${error.message} Please refresh the page or try again.`;
+    document.getElementById("error").innerHTML = errorMessage;
+    setTimeout(5000);
+    location.reload();
   }
 
   document.getElementById("parentID").innerHTML = "";
   var counter = 0;
   var search = document.getElementById("search").value;
 
-  console.log(search);
+  if (monsterList.length !== 2847) {
+    document.getElementById(
+      "parentID"
+    ).innerHTML += `<h3>Monster availability is limited: available monsters: ${monsterList.length}</h3>`;
+  }
+
   monsterList.forEach((value) => {
     if (
       value.name.toLowerCase().includes(search.toLowerCase()) &&
