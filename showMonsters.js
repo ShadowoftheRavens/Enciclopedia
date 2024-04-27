@@ -44,7 +44,7 @@ async function showMonsters() {
       document.getElementById("search").style.display = "inline";
     }
   } catch (error) {
-    loadingBar.style.display = "none";
+  
     const errorMessage = `An error occurred: ${error.message} Please refresh the page or try again.`;
     document.getElementById("error").innerHTML = errorMessage;
     setTimeout(5000);
