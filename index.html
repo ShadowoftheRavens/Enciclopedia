@@ -1,61 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles_dnd.css" />
-    <script src="showMonsters.js" type="module"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles_dnd.css" />
+  <script src="showMonsters.js" defer></script>
+  <title>Bestiary D&D 5e</title>
+</head>
+<body>
 
-    <title>Document</title>
-  </head>
+  <h1 class="Titleoftheos">Bestiary D&amp;D 5e</h1>
+  <p class="undertitle">A compendium of creatures from the open5e API</p>
 
-  <body>
-    <h1>Bestiarsy D&D 5e</h1>
+  <!-- 🔍 Search -->
+  <div id="searchbar">
+    <label>
+      Search:
+      <input type="text" id="search" placeholder="e.g. dragon, goblin…" />
+    </label>
+    <button id="collapse-all-btn" onclick="collapseAll()">Collapse All</button>
+    <button id="expand-all-btn"   onclick="expandAll()">Expand All</button>
+  </div>
 
-    <div id="google_translate_element"></div>
-
-    <script type="text/javascript">
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement(
-          { pageLanguage: "en" },
-          "google_translate_element"
-        );
-      }
-    </script>
-
-    <script
-      type="text/javascript"
-      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <div id="loading-bar">
-      <div class="wrapper">
-        <div class="loader-box">
-          <div class="loader"></div>
-          <div class="loader-text">Loading...</div>
-        </div>
-
-        <div class="description-box">
-          Please be Patient this may take a while
-        </div>
+  <!-- ⏳ Loading -->
+  <div id="loading-bar" style="display:none;">
+    <div class="wrapper">
+      <div class="loader-box">
+        <div class="loader"></div>
+        <div class="loader-text">Loading...</div>
       </div>
+      <div class="description-box">Summoning creatures from the depths…</div>
     </div>
-    <script>
-      window.onload = function () {
-        if (!window.monstersData) {
-          document.getElementById("search").style.display = "none";
-          showMonsters();
-        }
-      };
-    </script>
-    <div id="searchbar">
-      <label for="search"
-        >Search Here: <input type="text" id="search" onkeyup="showMonsters()"
-      /></label>
-    </div>
+  </div>
 
-    <script src="showMonsters.js">
-      window.onload = showMonsters()
-    </script>
-    <div id="parentID"></div>
-    <script></script>
-  </body>
+
+  <div class="pagination-controls">
+    <button onclick="prevPage()">⬅ Previous</button>
+    <span id="page-info"></span>
+    <button onclick="nextPage()">Next ➡</button>
+  </div>
+
+  <div id="error" style="color:red;"></div>
+
+  <div id="parentID"></div>
+
+  
+  <div class="pagination-controls">
+    <button onclick="prevPage()">⬅ Previous</button>
+    <span id="page-info-bottom"></span>
+    <button onclick="nextPage()">Next ➡</button>
+  </div>
+
+</body>
 </html>
